@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock title %}
+{% block body %}
+<h1>Latest</h1>
+{% if blog_list %}
+<ul>
+    {% for blog in blog_list %}
+    <li><a href="{% url 'blog:detail' blog.slug %}">{{blog.title}}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock body %}
